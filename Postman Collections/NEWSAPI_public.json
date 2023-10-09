@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "e3b84c0c-7fd3-4262-924d-0c028005c06c",
+		"name": "NEWSAPI_public",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "US news",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fe8fbc0-244c-4378-b474-00ff7fd1be53",
+						"exec": [
+							"pm.test('Verify Status is 200OK', () => {\r",
+							"    pm.expect(pm.response.code).to.equal(200)\r",
+							"});\r",
+							"\r",
+							"pm.test('Get total news count', () => {\r",
+							"    pm.expect(pm.response.json().totalResults).greaterThan(0);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "03f323de-f06f-42d2-b9ed-680f0b4e7f63",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://newsapi.org/v2/top-headlines?country=us&apiKey={{rmen_apikey}}",
+					"protocol": "https",
+					"host": [
+						"newsapi",
+						"org"
+					],
+					"path": [
+						"v2",
+						"top-headlines"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "us"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{rmen_apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "rmen_apikey",
+			"value": "rmen_apikey"
+		}
+	]
+}
