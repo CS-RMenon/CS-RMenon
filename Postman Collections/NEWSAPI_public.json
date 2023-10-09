@@ -58,10 +58,26 @@
 			"response": []
 		}
 	],
-	"variable": [
+	"event": [
 		{
-			"key": "rmen_apikey",
-			"value": "rmen_apikey"
+			"listen": "prerequest",
+			"script": {
+				"id": "0797c282-2e6b-4cad-a129-8f5a4f8dacae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d18a0002-4674-49e5-9daf-9f6f8c552380",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
